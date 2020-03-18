@@ -2,10 +2,12 @@ package com.example.petshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     aux += i;
                     aux+= '\n';
                 }
-
                 Toast.makeText(getApplicationContext(), aux, Toast.LENGTH_SHORT).show();
             }
 
@@ -109,4 +110,29 @@ public class MainActivity extends AppCompatActivity {
         Log.d("lifecycle", "onDestroy invoked");
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.login:
+                openLoginPage();
+                return true;
+            case R.id.settings:
+                openSettingsPage();
+                ;
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void openSettingsPage() {
+        Intent intent = new Intent(this, activity_settings.class);
+        startActivity(intent);
+    }
+
+    public void openLoginPage() {
+        Intent intent = new Intent(this, activity_login.class);
+        startActivity(intent);
+    }
 }
