@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView);
 
         listItem = getResources().getStringArray(R.array.array_technology);
+
+        if (savedInstanceState != null) {
+            clickedItems = savedInstanceState.getStringArrayList("savedItems");
+        }
+
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, listItem);
         listView.setAdapter(adapter);
@@ -46,9 +53,23 @@ public class MainActivity extends AppCompatActivity {
                     aux += i;
                     aux+= '\n';
                 }
+
                 Toast.makeText(getApplicationContext(), aux, Toast.LENGTH_SHORT).show();
             }
+
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_menu, menu);
+        return true;
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putStringArrayList("savedItems", clickedItems);
+        super.onSaveInstanceState(outState);
     }
 
 

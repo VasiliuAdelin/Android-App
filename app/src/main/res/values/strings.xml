@@ -1,4 +1,4 @@
-    <resources>
+<resources>
     <string name="app_name">PetShop</string>
         <string-array name="array_technology">
             <item>Android</item>
@@ -14,4 +14,8 @@
             <item>.Net</item>
             <item>Perl</item>
         </string-array>
+
+            <string name="shop">Shop</string>
+            <string name="login">Log in</string>
+            <string name="settings">Settings</string>
     </resources>
