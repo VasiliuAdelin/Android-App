@@ -35,6 +35,9 @@ public class activity_settings extends AppCompatActivity {
             case R.id.home:
                 openHomePage();
                 return true;
+            case R.id.register:
+                openRegisterPage();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -47,6 +50,11 @@ public class activity_settings extends AppCompatActivity {
 
     public void openLoginPage() {
         Intent intent = new Intent(this, activity_login.class);
+        startActivity(intent);
+    }
+
+    public void openRegisterPage() {
+        Intent intent = new Intent(this, activity_register.class);
         startActivity(intent);
     }
 

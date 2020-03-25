@@ -7,13 +7,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class activity_login extends AppCompatActivity {
+    private Button butonToRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        butonToRegister = (Button) findViewById(R.id.goToRegisterButton);
+
+        butonToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRegisterPage();
+            }
+        });
     }
 
     @Override
@@ -32,6 +43,9 @@ public class activity_login extends AppCompatActivity {
             case R.id.settings:
                 openSettingsPage();
                 return true;
+            case R.id.register:
+                openRegisterPage();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -44,6 +58,11 @@ public class activity_login extends AppCompatActivity {
 
     public void openHomePage() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openRegisterPage() {
+        Intent intent = new Intent(this, activity_register.class);
         startActivity(intent);
     }
 }

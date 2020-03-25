@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Set your preference">
+
+        <EditTextPreference
+            android:defaultValue="false"
+            android:key="nickname"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Set your nickname" />
+        <CheckBoxPreference
+            android:summary="Set you name anonymous"
+            android:title="Anonymous name" />
+        <CheckBoxPreference
+            android:summary="Set you founds anonymous"
+            android:title="Anonymous founds" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

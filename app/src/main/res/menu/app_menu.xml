@@ -8,4 +8,7 @@
         android:title="@string/settings" />
     <item android:id="@+id/home"
         android:title="@string/home" />
+    <item android:id="@+id/register"
+        android:title="Register" />
+
 </menu>

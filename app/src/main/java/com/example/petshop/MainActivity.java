@@ -119,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.settings:
                 openSettingsPage();
-                ;
+            case R.id.register:
+                openRegisterPage();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -135,4 +136,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, activity_login.class);
         startActivity(intent);
     }
+
+    public void openRegisterPage() {
+        Intent intent = new Intent(this, activity_register.class);
+        startActivity(intent);
+    }
+
 }
