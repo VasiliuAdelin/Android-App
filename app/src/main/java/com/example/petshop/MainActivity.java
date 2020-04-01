@@ -114,17 +114,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.register:
+                openRegisterPage();
+                return true;
             case R.id.login:
                 openLoginPage();
                 return true;
             case R.id.settings:
                 openSettingsPage();
-            case R.id.register:
-                openRegisterPage();
+                return true;
+            case R.id.sensors:
+                openSensorsPage();
+                return true;
+            case R.id.camera:
+                openCameraPage();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void openSensorsPage() {
+        Intent intent = new Intent(this, activity_sensors.class);
+        startActivity(intent);
     }
 
     public void openSettingsPage() {
@@ -139,6 +151,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void openRegisterPage() {
         Intent intent = new Intent(this, activity_register.class);
+        startActivity(intent);
+    }
+    public void openCameraPage() {
+        Intent intent = new Intent(this, activity_camera.class);
         startActivity(intent);
     }
 

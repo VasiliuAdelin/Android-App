@@ -46,9 +46,20 @@ public class activity_login extends AppCompatActivity {
             case R.id.register:
                 openRegisterPage();
                 return true;
+            case R.id.sensors:
+                openSensorsPage();
+                return true;
+            case R.id.camera:
+                openCameraPage();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void openSensorsPage() {
+        Intent intent = new Intent(this, activity_sensors.class);
+        startActivity(intent);
     }
 
     public void openSettingsPage() {
@@ -63,6 +74,10 @@ public class activity_login extends AppCompatActivity {
 
     public void openRegisterPage() {
         Intent intent = new Intent(this, activity_register.class);
+        startActivity(intent);
+    }
+    public void openCameraPage() {
+        Intent intent = new Intent(this, activity_camera.class);
         startActivity(intent);
     }
 }
